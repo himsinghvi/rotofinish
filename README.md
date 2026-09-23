@@ -66,6 +66,24 @@ python run.py --skip-install --skip-build
 
 You do **not** need to run Vite on port 5173 unless you explicitly want Vite hot-module reload.
 
+## Deploy to Vercel (single project, one URL)
+
+Frontend and API deploy together from **this repo** — no separate services or domains.
+
+1. Push the repo to GitHub ([himsinghvi/rotofinish](https://github.com/himsinghvi/rotofinish)).
+2. In [Vercel](https://vercel.com) → **New Project** → import the repo.
+3. Framework Preset: **Other** (Vercel reads `vercel.json` at the repo root).
+4. Deploy — no extra root directory or monorepo settings needed.
+
+After deploy, everything is on one URL:
+
+| Path | Served by |
+|------|-----------|
+| `/`, `/about`, `/products`, … | React SPA (`frontend/`) |
+| `/api/*` | FastAPI (`backend/`) |
+
+Local development is unchanged: `python run.py` still builds to `backend/static/` and serves website + API on one port.
+
 ## Project Structure
 
 ```
@@ -85,7 +103,9 @@ robofinish/
 │   ├── package.json
 │   └── vite.config.js
 ├── run.py                   # Build & run helper
-└── start.bat                # Windows quick start
+├── start.bat                # Windows quick start
+├── vercel.json              # Single Vercel project (frontend + API)
+└── requirements.txt         # Root Python deps pointer (Vercel)
 ```
 
 ## API Endpoints

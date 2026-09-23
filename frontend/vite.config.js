@@ -1,10 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// Local `python run.py` builds into backend/static; Vercel frontend service uses dist/.
+const isVercel = Boolean(process.env.VERCEL)
+
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: '../backend/static',
+    outDir: isVercel ? 'dist' : '../backend/static',
     emptyOutDir: true,
   },
   server: {

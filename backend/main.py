@@ -1,4 +1,10 @@
+import sys
 from pathlib import Path
+
+# Vercel Services loads backend/main.py as a flat module; ensure sibling imports resolve.
+_BACKEND_DIR = Path(__file__).resolve().parent
+if str(_BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(_BACKEND_DIR))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
