@@ -1,0 +1,37 @@
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 2rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rf-border), var(--rf-primary), var(--rf-border), transparent);
+  transform-origin: center;
+}
+
+.divider-line-left {
+  transform-origin: right center;
+}
+
+.divider-line-right {
+  transform-origin: left center;
+}
+
+.divider-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(196, 3, 0, 0.25);
+  background: rgba(196, 3, 0, 0.08);
+  color: var(--rf-primary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}

@@ -1,0 +1,16 @@
+.blast-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.blast-ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(196, 3, 0, 0.3);
+  border-radius: 50%;
+}

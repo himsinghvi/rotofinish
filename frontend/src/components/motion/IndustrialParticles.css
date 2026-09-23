@@ -1,0 +1,48 @@
+.industrial-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.industrial-particles .particle {
+  position: absolute;
+  bottom: -4px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(196, 3, 0, 0.35);
+  animation: particle-rise linear infinite;
+  opacity: 0;
+}
+
+.industrial-particles .particle:nth-child(3n) {
+  width: 2px;
+  height: 2px;
+  background: rgba(184, 190, 197, 0.25);
+}
+
+.industrial-particles .particle:nth-child(5n) {
+  width: 4px;
+  height: 1px;
+  border-radius: 1px;
+  background: rgba(196, 3, 0, 0.2);
+}
+
+@keyframes particle-rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}

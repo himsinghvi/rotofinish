@@ -1,0 +1,306 @@
+:root {
+  --rf-primary: #c40300;
+  --rf-primary-dark: #9a0200;
+  --rf-primary-light: #e00400;
+  --rf-orange: #c40300;
+  --rf-orange-light: #ff3333;
+  --rf-orange-dark: #9a0200;
+  --rf-steel: #8a9199;
+  --rf-steel-light: #b8bec5;
+  --rf-dark: #0a0c10;
+  --rf-dark-2: #12151c;
+  --rf-dark-3: #1a1f2a;
+  --rf-surface: #161b24;
+  --rf-text: #e8eaed;
+  --rf-text-muted: #9aa3ad;
+  --rf-border: rgba(255, 255, 255, 0.08);
+  --rf-glow: rgba(196, 3, 0, 0.35);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--rf-dark);
+  color: var(--rf-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--rf-primary);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rf-dark-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rf-primary-dark);
+  border-radius: 4px;
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rf-primary);
+  margin-bottom: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background: var(--rf-primary);
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.section-subtitle {
+  color: var(--rf-text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.text-primary-brand,
+.text-orange {
+  color: var(--rf-primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, var(--rf-steel-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-rf-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--rf-primary);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-rf-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-rf-primary:hover {
+  background: var(--rf-primary-light);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--rf-glow);
+}
+
+.btn-rf-primary:hover::before {
+  transform: translateX(100%);
+}
+
+/* Tactile press feedback — subtle, industry-standard micro-interaction */
+.btn-rf-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px var(--rf-glow);
+  transition-duration: 0.08s;
+}
+
+/* Nudge the arrow forward on hover for a sense of direction */
+.btn-rf-primary i,
+.btn-rf-outline i {
+  transition: transform 0.25s ease;
+}
+
+.btn-rf-primary:hover i.bi-arrow-right,
+.btn-rf-outline:hover i.bi-arrow-right {
+  transform: translateX(4px);
+}
+
+.btn-rf-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--rf-text);
+  border: 1px solid var(--rf-border);
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-rf-outline:hover {
+  border-color: var(--rf-primary);
+  color: var(--rf-primary);
+  background: rgba(196, 3, 0, 0.08);
+}
+
+.btn-rf-outline:active {
+  transform: translateY(0);
+  transition-duration: 0.08s;
+}
+
+/* Clear keyboard focus ring — accessible without disturbing mouse users */
+.btn-rf-primary:focus-visible,
+.btn-rf-outline:focus-visible,
+.nav-link-rf:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--rf-primary-light);
+  outline-offset: 3px;
+}
+
+.glass-card {
+  background: rgba(22, 27, 36, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--rf-border);
+  transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(196, 3, 0, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.page-hero {
+  position: relative;
+  padding: 10rem 0 5rem;
+  background: var(--rf-dark-2);
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(196, 3, 0, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(138, 145, 153, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.page-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+}
+
+.form-control-rf {
+  background: var(--rf-dark-3);
+  border: 1px solid var(--rf-border);
+  color: var(--rf-text);
+  padding: 0.875rem 1rem;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+
+.form-control-rf:focus {
+  background: var(--rf-dark-3);
+  border-color: var(--rf-primary);
+  color: var(--rf-text);
+  box-shadow: 0 0 0 3px rgba(196, 3, 0, 0.15);
+}
+
+.form-control-rf::placeholder {
+  color: var(--rf-text-muted);
+}
+
+.alert-rf {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--rf-primary);
+  background: rgba(196, 3, 0, 0.1);
+  color: var(--rf-text);
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* Accessibility: honor the visitor's "reduce motion" OS setting.
+   Neutralizes CSS keyframe loops (sparks, gears, orbs, marquee, pulses)
+   and instant-completes transitions, while keeping all content visible.
+   Framer Motion is handled globally via <MotionConfig reducedMotion="user">. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

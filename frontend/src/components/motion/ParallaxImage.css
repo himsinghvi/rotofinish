@@ -1,0 +1,24 @@
+.parallax-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-frame {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(196, 3, 0, 0.25);
+  pointer-events: none;
+  animation: frame-pulse 4s ease-in-out infinite;
+}
+
+@keyframes frame-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}

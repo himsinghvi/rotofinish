@@ -1,0 +1,232 @@
+.why-choose-section {
+  background: var(--rf-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.why-choose-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--rf-text-muted);
+  line-height: 1.6;
+}
+
+.why-choose-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  background: var(--rf-primary);
+  border-radius: 50%;
+}
+
+.why-choose-image {
+  position: relative;
+}
+
+.why-choose-image::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(196, 3, 0, 0.3);
+  z-index: -1;
+}
+
+.why-choose-image img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.icon-box {
+  padding: 2rem;
+  height: 100%;
+  background: rgba(22, 27, 36, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--rf-border);
+  transition: all 0.4s ease;
+}
+
+.icon-box:hover {
+  border-color: rgba(196, 3, 0, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.icon-box-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(196, 3, 0, 0.1);
+  border: 1px solid rgba(196, 3, 0, 0.2);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--rf-primary);
+  transition: all 0.4s ease;
+}
+
+.icon-box:hover .icon-box-icon {
+  background: var(--rf-primary);
+  color: #fff;
+  transform: rotate(10deg);
+}
+
+.icon-box h3 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.icon-box p {
+  color: var(--rf-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.capabilities-section {
+  background: var(--rf-dark-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.capabilities-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(196, 3, 0, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.capability-card {
+  padding: 2.5rem;
+  background: var(--rf-surface);
+  border: 1px solid var(--rf-border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.capability-card:hover {
+  border-color: rgba(196, 3, 0, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.capability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--rf-primary);
+  transition: height 0.4s ease;
+}
+
+.capability-card:hover::before {
+  height: 100%;
+}
+
+.cap-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.cap-icon {
+  font-size: 2rem;
+  color: var(--rf-primary);
+  margin-bottom: 1rem;
+}
+
+.capability-card h3 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.capability-card p {
+  color: var(--rf-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.marquee-section {
+  padding: 5rem 0;
+  overflow: hidden;
+  background: var(--rf-dark);
+}
+
+.marquee-track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-content {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  align-items: center;
+}
+
+.marquee-brand {
+  flex-shrink: 0;
+  padding: 1rem 1.5rem;
+  background: rgba(22, 27, 36, 0.8);
+  border: 1px solid var(--rf-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+.marquee-brand:hover {
+  border-color: rgba(196, 3, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.marquee-brand img {
+  max-height: 48px;
+  max-width: 120px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+}

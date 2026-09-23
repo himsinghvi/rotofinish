@@ -1,0 +1,44 @@
+.cta-section {
+  position: relative;
+  padding: 7rem 0;
+  background: var(--rf-dark-3);
+  overflow: hidden;
+}
+
+.cta-outline {
+  color: var(--rf-text);
+  border-color: var(--rf-border);
+}
+
+.cta-outline:hover {
+  color: var(--rf-primary);
+}
+
+.cta-particles {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(196, 3, 0, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(138, 145, 153, 0.08) 0%, transparent 40%);
+}
+
+.cta-particles::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content .section-title,
+.cta-content .section-label {
+  color: #fff;
+}
+
+.cta-content .section-subtitle {
+  color: var(--rf-text-muted);
+}

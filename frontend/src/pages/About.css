@@ -1,0 +1,31 @@
+.about-text {
+  color: var(--rf-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--rf-surface);
+  border: 1px solid var(--rf-border);
+  transition: all 0.3s ease;
+}
+
+.cert-item:hover {
+  border-color: rgba(196, 3, 0, 0.3);
+  transform: translateX(4px);
+}
+
+.cert-item i {
+  font-size: 1.5rem;
+  color: var(--rf-primary);
+}
+
+.about-location {
+  background: var(--rf-dark-2);
+  border: 1px solid var(--rf-border);
+}
