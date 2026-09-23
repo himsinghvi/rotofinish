@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import PageHero from '../components/PageHero'
 import ContactForm from '../components/ContactForm'
+import ContactLottie from '../components/ContactLottie'
 import { useApi, pageTransition, useScrollAnimation } from '../hooks/useApi'
 import './Contact.css'
 
@@ -18,7 +19,7 @@ export default function Contact() {
 
       <section className="section-padding">
         <div className="container">
-          <div className="row g-5">
+          <div className="row g-4 g-lg-4 align-items-lg-start contact-layout">
             <div className="col-lg-5">
               <motion.div {...anim}>
                 <h2 className="h4 mb-4">Get in Touch</h2>
@@ -68,7 +69,14 @@ export default function Contact() {
                 </div>
               </motion.div>
             </div>
-            <div className="col-lg-7">
+
+            <div className="col-lg-2 contact-layout__lottie">
+              <motion.div className="contact-lottie-wrap" {...anim}>
+                <ContactLottie />
+              </motion.div>
+            </div>
+
+            <div className="col-lg-5">
               <ContactForm />
             </div>
           </div>

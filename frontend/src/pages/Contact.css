@@ -47,3 +47,9 @@
   border: 1px solid var(--rf-border);
   overflow: hidden;
 }
+
+@media (min-width: 992px) {
+  .contact-layout {
+    --bs-gutter-x: 1.25rem;
+  }
+}

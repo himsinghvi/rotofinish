@@ -1,0 +1,67 @@
+.contact-lottie-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+.contact-lottie {
+  width: 100%;
+  height: 220px;
+  pointer-events: none;
+  line-height: 0;
+  background: transparent;
+}
+
+.contact-lottie > * {
+  background: transparent !important;
+}
+
+.contact-lottie canvas {
+  display: block;
+  background: transparent !important;
+}
+
+.contact-lottie-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 55%;
+  display: block;
+  background: transparent;
+}
+
+@media (min-width: 992px) {
+  .contact-layout__lottie {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-lottie-wrap {
+    margin-top: 2.5rem;
+  }
+
+  .contact-lottie {
+    height: 260px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .contact-lottie-wrap {
+    max-width: 240px;
+    margin: 0.25rem auto 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-lottie {
+    height: 190px;
+  }
+
+  .contact-lottie-wrap {
+    max-width: 210px;
+  }
+}
